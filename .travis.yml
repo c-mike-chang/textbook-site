@@ -1,0 +1,15 @@
+language: python
+python:
+  - "3.6"
+install:
+  - pip install -r requirements-travis.txt
+  - pip install django-widget_tweaks
+script:
+  - python manage.py makemigrations
+  - python manage.py migrate
+  - python manage.py test
+
+#deploy:
+  #provider: heroku
+  #api_key: ...
+  #app: textbookFinder
